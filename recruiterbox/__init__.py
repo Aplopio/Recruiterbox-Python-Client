@@ -1,11 +1,31 @@
-from rbox import rbox as api_client
+import pytasty
 import unittest
 import uuid
 
-#'''
-api_client.SITE = "http://demoaccount.rbox.com:8000"
-api_client.api_key = "****************"
-#'''
+class DetailDocResource(pytasty.DetailResource):
+    """
+    This is a special case
+    """
 
-api_client.username = "demoaccount@recruiterbox.com"
-api_client.SCHEMA_DUMP_URI = api_client.SITE+"/static/schema_dump.json"
+    def get_file(self):
+        self._update_object()
+        response = requests.get(rbox.SITE + self.location)
+        response = requests.get(response.content)
+        buff = StringIO()
+        buff.content_type = response.headers['content-type']
+        buff.name = self.filename
+        buff.write(response.content)
+        buff.seek(0)
+        #buff.close()
+        return buff
+
+class ListDocResource(pytasty.ListResource):
+
+    _detail_class = DetailDocResource
+
+    def all(self, **kwargs):
+        return []
+
+
+
+recruiterbox = pytasty.PyTasty(resource_custom_list_class={"docs":ListDocResource})
