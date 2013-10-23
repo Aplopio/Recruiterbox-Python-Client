@@ -2,7 +2,7 @@ import sys
 import os
 sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 
-from recruiterbox import recruiterbox
+from recruiterbox_api import recruiterbox_api as recruiterbox
 
 recruiterbox.SITE = "https://app.recruiterbox.com"
 recruiterbox.api_key = "******************"

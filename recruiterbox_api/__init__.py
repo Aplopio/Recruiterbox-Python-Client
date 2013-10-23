@@ -28,4 +28,4 @@ class ListDocResource(pytasty.ListResource):
 
 
 
-recruiterbox = pytasty.PyTasty(resource_custom_list_class={"docs":ListDocResource})
+recruiterbox_api = pytasty.PyTasty(resource_custom_list_class={"docs":ListDocResource})

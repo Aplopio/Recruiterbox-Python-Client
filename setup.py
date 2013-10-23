@@ -7,9 +7,9 @@ except ImportError:
     use_setuptools()
     from setuptools import setup
 setup(
-    name='recruiterbox',
+    name='recruiterbox_api',
     version='0.1dev',
-    packages=['recruiterbox',],
+    packages=['recruiterbox_api',],
     license='MIT',
     long_description=open('README.md').read(),
 )
