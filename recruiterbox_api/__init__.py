@@ -25,6 +25,7 @@ class DetailDocResource(pytasty.DetailResource):
         raise Exception("Cannot delete file direct!")
 
     def save(self, **kwargs):
+        #TODO: POST self.file to the proper file
         pass
 
 class ListDocResource(pytasty.ListResource):
@@ -43,6 +44,7 @@ class ListDocResource(pytasty.ListResource):
     def create(self, file_tuple, **kwargs):
         """Requires a tuple -- (filename, content, content_type)"""
         doc = super(ListDocResource,self).create(**kwargs)
+        doc.file = file_tuple
         return doc
 
 
