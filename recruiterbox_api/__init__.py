@@ -2,7 +2,7 @@ import pytasty
 import unittest
 import uuid
 import requests
-from StringIO import StringIO
+from io import StringIO
 
 class DetailDocResource(pytasty.DetailResource):
     """
