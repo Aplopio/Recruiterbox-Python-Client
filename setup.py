@@ -13,7 +13,7 @@ setup(
     license='MIT',
     long_description=open('README.md').read(),
     dependency_links=[
-        "https://github.com/Aplopio/pytasty/archive/master.zip#egg=pytasty",
+        "https://github.com/Aplopio/pytasty/archive/master.zip#egg=pytasty-0.1dev",
         ]
 )
 
