@@ -12,4 +12,5 @@ setup(
     packages=['recruiterbox_api',],
     license='MIT',
     long_description=open('README.md').read(),
+    download_url = 'https://github.com/Aplopio/pytasty/archive/master.zip'
 )
