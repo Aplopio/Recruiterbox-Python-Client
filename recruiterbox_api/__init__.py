@@ -21,6 +21,17 @@ class DetailDocResource(pytasty.DetailResource):
         #buff.close()
         return buff
 
+    def _get_content(self):
+        """
+        Returns the byte content of the
+        file object
+        """
+        self._update_object()
+        response = requests.get(pytasty.__API_OBJ__.SITE + self.location)
+        response = requests.get(response.content.decode("utf8"))
+        return response.content
+
+
     def delete(self):
         raise Exception("Cannot delete file direct!")
 
