@@ -16,7 +16,7 @@ class DetailDocResource(pytasty.DetailResource):
         buff = StringIO()
         buff.content_type = response.headers['content-type']
         buff.name = self.filename
-        buff.write(response.content)
+        buff.write(response.content.decode())
         buff.seek(0)
         #buff.close()
         return buff
