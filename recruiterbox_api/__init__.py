@@ -12,7 +12,7 @@ class DetailDocResource(pytasty.DetailResource):
     def get_file(self):
         self._update_object()
         response = requests.get(pytasty.__API_OBJ__.SITE + self.location)
-        response = requests.get(response.content)
+        response = requests.get(str(response.content))
         buff = StringIO()
         buff.content_type = response.headers['content-type']
         buff.name = self.filename
