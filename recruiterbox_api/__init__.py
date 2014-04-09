@@ -11,7 +11,7 @@ class DetailDocResource(pytasty.DetailResource):
 
     def get_file(self):
         self._update_object()
-        response = requests.get(pytasty.__API_OBJ__.SITE + self.location)
+        response = requests.get(self._list_object.SITE + self.location)
         response = requests.get(response.content.decode())
         buff = StringIO()
         buff.content_type = response.headers['content-type']
@@ -27,7 +27,7 @@ class DetailDocResource(pytasty.DetailResource):
         file object
         """
         self._update_object()
-        response = requests.get(pytasty.__API_OBJ__.SITE + self.location)
+        response = requests.get(self._list_object.SITE + self.location)
         response = requests.get(response.content.decode("utf8"))
         return response.content
 
