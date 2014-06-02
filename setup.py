@@ -8,7 +8,7 @@ except ImportError:
     from setuptools import setup
 setup(
     name='recruiterbox_api',
-    version='0.1dev',
+    version='0.0.1',
     packages=['recruiterbox_api',],
     license='MIT',
     long_description=open('README.md').read(),
@@ -17,4 +17,3 @@ setup(
         ],
     install_requires=['pytasty']
 )
-
