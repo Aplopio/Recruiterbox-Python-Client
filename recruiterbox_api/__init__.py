@@ -37,7 +37,7 @@ class DetailDocResource(pytasty.DetailResource):
 
     def save(self, **kwargs):
         #TODO: POST self.file to the proper file
-        pass
+        raise NotImplementedError("")
 
 class ListDocResource(pytasty.ListResource):
 
